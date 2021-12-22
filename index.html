@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<link rel="icon" href="images/crowd-icon.png" type="image/icon type">
+
+<div class="loader-container" style="z-index: 10000;">
+  <div class="loader"></div>
+</div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="theme/app.css">
+    <link rel="stylesheet" href="node_modules/fontawesomepro/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <title>Crowd Funding Product</title>
+    <style>
+      .loader-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        z-index: 9000;
+      }
+      .loader {
+  color: green;
+  font-size: 90px;
+  text-indent: -9999em;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin: 72px auto;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+@-webkit-keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@-webkit-keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 p-0">
+          <div class="bg-img">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="">
+                    <nav class="navbar navbar-expand-lg navbar-light nav-blur nav-fixed header animate__animated">
+                      <div class="container-fluid">
+                        <a class="navbar-brand fw-bolder text-white" href="#">crowdfund</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <i class="far fa-bars" id="btn"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                              <a class="nav-link text-white" aria-current="page" href="#one">About</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link text-white" href="#two">Discover</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link text-white" href="#">Get Started</a>
+                            </li>
+                          </ul>
+                          
+                        </div>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <!-- first Card -->
+          <div class="col-12 wow animate__fadeIn ani-delay-1">
+            <div class="first-card ">
+              <div class="card width mx-auto medium-width rounded-3">
+                <div class="card-body">
+                  <div class="logo">
+                    <img src="images/logo-mastercraft.svg" class="img-fluid" alt="">
+                  </div>
+                  <h3 class="fw-bolder text-center">Mastercraft Bamboo Monitor Riser</h3>
+                  <p class="tex">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
+                  <div class="d-flex justify-content-between">
+
+                    <!-- Modal Box Start -->
+
+                    <!-- <a href="#" class="btn btn-primary rounded-pill first-btn">Back this project</a> -->
+               
+                  <!-- Button trigger modal -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary rounded-pill first-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Back this project
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade phone-up" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg card-modal-center">
+        <div class="modal-content modal-width">
+          <div class="modal-header modal-header-ud">
+            <h5 class="modal-title" id="exampleModalLabel">Back this project</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Want to support us in brining Mastercraft Bamboo Monitor Riser out in the word?</p>
+            <!-- First body -->
+            <div class="border b-radius ">
+              <div class="d-flex align-items-center my-3">
+                <input type="radio" name="one" id="firstInput" value="ftrue" class="btn btn-primary p-0 ms-3">
+                <span class="m-0 ms-3">Pledge with no reward</span>
+              </div>
+              <p class="ms-5 ps-2 me-3">Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
+              <hr>
+              <div class="input-dis mb-4 phone-none" id="firstBody" style="display: none;">
+                <p class="mb-0 mt-1">Enter your pledge</p>
+                <div class="d-flex align-items-center justify-content-end phone-btn" >
+                  <input type="text" class="rounded-pill ps-3" placeholder="$">
+                  <button class="btn btn-primary rounded-pill" id="fcontinue">Continue</button>
+
+                  <!-- Continue Modal Start -->
+                  <div id="myModal" class="modal wow animate__fadeIn">
+
+                    <!-- Modal content -->
+                    <div class="modal-content m-width ">
+                      <i class="fas fa-check-circle icon-check text-primary"></i>
+                      <h4 class="text-center">Thank for your support</h4>
+                      <p class="text-center">Your pledge brings us one step closer to sharing Mastercraft <br>Bamboo Monitor Riser worldwide. You will get an email once <br>our campaign is completed</p>
+                      <button class="btn btn-primary rounded-pill g-t-btn" id="gotIt">Got it !</button>
+                    </div>
+                  
+                  </div>
+
+                 
+                  <!-- Continue Modal End -->
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Second body -->
+            <div class="border b-radius mt-4">
+              <div class="d-flex align-items-center my-3">
+                <input type="radio" name="one" id="secondInput" value="strue" class="btn btn-primary p-0 ms-3">
+                <span class="m-0 ms-3">Bamboo Stand</span>
+              </div>
+              <p class="ms-5 ps-2 me-3">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you'll be added to a special Backer member list.</p>
+              <hr>
+              <div class="input-dis mb-4 phone-none" id="secondBody" style="display: none;">
+                <p class="mb-0 mt-1">Enter your pledge</p>
+                <div class="d-flex align-items-center justify-content-end phone-btn">
+                  <input type="text"  class="rounded-pill ps-3" placeholder="$">
+                  <button class="btn btn-primary rounded-pill" id="scontinue" >Continue</button>
+                  <!-- Start -->
+                  <div id="myModal1" class="modal wow animate__fadeIn">
+
+                    <!-- Modal content -->
+                    <div class="modal-content m-width ">
+                      <i class="fas fa-check-circle icon-check text-primary"></i>
+                      <h4 class="text-center">Thank for your support</h4>
+                      <p class="text-center">Your pledge brings us one step closer to sharing Mastercraft <br>Bamboo Monitor Riser worldwide. You will get an email once <br>our campaign is completed</p>
+                      <button class="btn btn-primary rounded-pill g-t-btn" id="gotIt1">Got it !</button>
+                    </div>
+                  
+                  </div>
+                  <!-- End -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Third body -->
+            <div class="border b-radius mt-4">
+              <div class="d-flex align-items-center my-3">
+                <input type="radio" name="one" id="thirdInput" class="btn btn-primary p-0 ms-3">
+                <span class="m-0 ms-3">Black Edition Stand</span>
+              </div>
+              <p class="ms-5 ps-2 me-3">You get a Black Special Edition computer stand and a personal thank you. You'll be added to our Backer member list. Shipping is included.</p>
+              <hr> 
+              <div class="input-dis mb-4 phone-none" id="thirdBody" style="display: none;">
+                <p class="mb-0 mt-1">Enter your pledge</p>
+                <div class="d-flex align-items-center justify-content-end phone-btn">
+                  <input type="text" class="rounded-pill ps-3" placeholder="$">
+                  <button class="btn btn-primary rounded-pill" id="tcontinue" >Continue</button>
+                  <!-- Start -->
+                  <div id="myModal2" class="modal wow animate__fadeIn">
+
+                    <!-- Modal content -->
+                    <div class="modal-content m-width ">
+                      <i class="fas fa-check-circle icon-check text-primary"></i>
+                      <h4 class="text-center">Thank for your support</h4>
+                      <p class="text-center">Your pledge brings us one step closer to sharing Mastercraft <br>Bamboo Monitor Riser worldwide. You will get an email once <br>our campaign is completed</p>
+                      <button class="btn btn-primary rounded-pill g-t-btn" id="gotIt2">Got it !</button>
+                    </div>
+                  
+                  </div>
+                  <!-- End -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Fourth body -->
+            <div class="border b-radius mt-4">
+              <div class="d-flex align-items-center my-3">
+                <input type="radio" name="one" id="fourthInput" class="btn btn-primary p-0 ms-3">
+                <span class="m-0 ms-3">Mahogany Specia Edition</span>
+              </div>
+              <p class="ms-5 ps-2 me-3">You get two Special Eidtion Mahogany stands, a Backer T-Shirt, and a personal thank you. You'll be added to our Backer member list. Shipping is included.</p>
+              <hr>
+              <div class="input-dis mb-4 phone-none" id="fourthBody" style="display: none;">
+                <p class="mb-0 mt-1">Enter your pledge</p>
+                <div class="d-flex align-items-center justify-content-end phone-btn">
+                  <input type="text" class="rounded-pill ps-3" placeholder="$">
+                  <button class="btn btn-primary rounded-pill" id="ftcontinue" >Continue</button>
+                  <!-- Start -->
+                  <div id="myModal3" class="modal wow animate__fadeIn">
+
+                    <!-- Modal content -->
+                    <div class="modal-content m-width ">
+                      <i class="fas fa-check-circle icon-check text-primary"></i>
+                      <h4 class="text-center">Thank for your support</h4>
+                      <p class="text-center">Your pledge brings us one step closer to sharing Mastercraft <br>Bamboo Monitor Riser worldwide. You will get an email once <br>our campaign is completed</p>
+                      <button class="btn btn-primary rounded-pill g-t-btn" id="gotIt3">Got it !</button>
+                    </div>
+                  
+                  </div>
+                  <!-- End -->
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+                    <!-- Modal Box End -->
+                    
+                    <div class="position-relative" id="bookmark" onclick="toggleText()">
+                      <!-- <img src="images/icon-bookmark.svg" class="position-absolute icon"  alt=""> -->
+                    <i class="fas fa-bookmark position-absolute icon icon-w" id="bookmarkIcon"></i>
+
+                      <a href="#" class="btn btn-primary bg-secondary   rounded-pill bookmark-btn" id="bookmarkText">
+                        Bookmark</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- second card -->
+        <div class="row mt-4">
+          <div class="col-12 wow animate__fadeIn ani-delay-2">
+            <div class="">
+              <div class="card width mx-auto medium-width">
+                <div class="card-body">
+                  <div class="list mb-3">
+                    <div class="">
+                      <h4 class="fw-bolder">$89,914</h4>
+                      <p class="fontsize">of $100,000 backed</p>
+                    </div>
+                    <div class="stick"></div>
+                    <div class="phone-stick d-lg-none d-md-none"></div>
+                    <div class="" style="margin-top: 10px;">
+                      <h4 class="fw-bolder">5,007</h4>
+                      <p class="fontsize">total backers</p>
+                    </div>
+                    <div class="stick"></div>
+                    <div class="phone-stick d-lg-none d-md-none"></div>
+
+                    <div class="" style="margin-top: 10px;">
+                      <h4 class="fw-bolder">56</h4>
+                      <p class="fontsize">days left</p>
+                    </div>
+                  </div>
+                  <div class="progress mb-4">
+                    <div class="progress-bar bg-primary w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Third Card -->
+        <div class="row mt-4" id="one">
+          <div class="col-12 wow animate__fadeIn ani-delay-3">
+            <div class="card width mx-auto medium-width" >
+              <div class="card-body">
+                <h5 class="fw-bolder">About this project</h5>
+                <p class="fontsize">The Mastercraft Bamboo Monitor Riser is a study and stylish platform that elevates.your screen to a more comfortable viewing height.Placing your monitor at eye level has the potential to improve your posture and make you more comfortable while at work, helping you stay focused on the task at hand.
+
+                  <p class="fontsize"> Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer to allow notepads, pens, and USB sticks to be stored under the stand.</p>
+                </p>
+
+                <!-- Fourth Card -->
+                <div class="border p-4 wow animate__fadeIn ani-delay-4 " id="two">
+                  <div class="phone-button align-items-center pt-3 pb-3">
+                    <h5 class="fw-bolder">Bamboo Stand</h5>
+                    <p class="text-primary fontsize mb-0">Pledge $25 or more</p>
+                  </div>
+
+                  <p class="fontsize pb-4">You get an ergonomic stand made of natural bamboo. You've helped us lanch <br> our promotional campaign, and you'll be added to a special Backer member list.</p>
+
+                  <div class="phone-button">
+                    <h3 class="fw-bolder">101 <span class="fontsize fw-normal">left</span></h3>
+                    <a href="" class="btn btn-primary rounded-pill font-size-reward phone-button-h"  >Select Reward</a>
+                  </div>
+                </div>
+
+                <!-- Five Card -->
+                <div class="border p-4 mt-5 wow animate__fadeIn ani-delay-1" id="waypoint">
+                  <div class="phone-button align-items-center pt-3 pb-3">
+                    <h5 class="fw-bolder">Black Edition Stand</h5>
+                    <p class="text-primary fontsize mb-0">Pledge $75 or more</p>
+                  </div>
+
+                  <p class="fontsize pb-4">You get a Black Special Edition computer stand and a personal thank you. You'll be added to our Backer member list. Shipping is included.</p>
+
+                  <div class="phone-button">
+                    <h3 class="fw-bolder">64 <span class="fontsize fw-normal">left</span></h3>
+                    <a href="" class="btn btn-primary rounded-pill font-size-reward phone-button-h"  >Select Reward</a>
+                  </div>
+                </div>
+
+                <!-- Six Card -->
+                <div class="border p-4 mt-5 wow animate__fadeIn ani-delay-2" disabled = "disabled">
+                  <div class="phone-button align-items-center pt-3 pb-3">
+                    <h5 class="fw-bolder">Mahogany Special Edition</h5>
+                    <p class="text-primary fontsize mb-0">Pledge $200 or more</p>
+                  </div>
+
+                  <p class="fontsize pb-4">You get two Special Mahogany stands a backer T-Shirt, and a personal thank you. You'll be added to our Backer member list. Shipping is included.</p>
+
+                  <div class="phone-button">
+                    <h3 class="fw-bolder">0 <span class="fontsize fw-normal">left</span></h3>
+                    <a href="" class="btn btn-primary rounded-pill font-size-reward phone-button-h"  >Out of stock</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#" class="btn btn-primary position-fixed scroll-to-top animate__animated" style="display: none;">
+      <i class="fas fa-angle-double-up"></i>
+    </a>
+    
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="node_modules/WOW-master/dist/wow.min.js"></script>
+    <script src="js/style.js"></script>
+</body>
+</html>
